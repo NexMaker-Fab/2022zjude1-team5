@@ -1,14 +1,13 @@
 <!-- 侧边栏 docs/_sidebar.md -->
 
 - [Team introduce](intro.md)
-- Daily homework
-  - [1. PM]()
-    - how to build web
-    - introduce team
+- [Daily homework](ddl.md)
+  - Project Management
+    - [how to build the page](./PM_mds/buildPage.md)
     - introduce finial project
-  - [2. arduino basic]()
-  - [3. CAD]()
-  - [4. 3D printing]()
+  - arduino basic
+  - CAD
+  - 3D printing
 - Final project
   - topic
   - innovation

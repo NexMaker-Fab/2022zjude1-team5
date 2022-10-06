@@ -1,7 +1,5 @@
-# Team Introduce
+# Introduce Team
 
-## About Us
-
-## Our Knowledge
+## About
 
 ## Members

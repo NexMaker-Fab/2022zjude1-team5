@@ -8,3 +8,7 @@ body {
 .sidebar {
   background-color: transparent;
 }
+
+.sidebar > h1 {
+  font-weight: 700;
+}
