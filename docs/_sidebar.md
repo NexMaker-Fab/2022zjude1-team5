@@ -4,7 +4,7 @@
 - [Daily homework](ddl.md)
   - Project Management
     - [how to build the page](./PM_mds/buildPage.md)
-    - introduce final project
+    - [introduce final project](./finalProjects_mds/introFinalTopic.md)
   - arduino basic
   - CAD
   - 3D printing
