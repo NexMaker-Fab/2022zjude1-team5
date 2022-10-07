@@ -1,25 +1,23 @@
-# How to Build the Page
-
-## STEP 1: Github+Docsify
+# STEP 1: Github+Docsify
 
 Refere to [this tutorial](https://www.nexmaker.com/doc/1projectmanage/github&docsify.html)
 
-### Tips
+## Tips
 
 1. We use **3.2 Docsifymethod** to build the structure
 2. DO NOT close the cmd window while running localhost:3000
 3. DO NOT forget the "\_" sign before \_sidebar.md & \_navbar.md
 
-## STEP 2: Set Image Uploader Service
+# STEP 2: Set Image Uploader Service
 
 You can refere to [this tutorial](https://www.nexmaker.com/doc/1projectmanage/imageuploadservice.html) if you're using a MAC. Since this group's builder was using a Win PC and failed to use Gitlab as image uploader, here we use Github as Picbed, click [here](https://blog.csdn.net/qq_43367829/article/details/104882071) for tutorial
 
-### Tips
+## Tips
 
 1. **Remember to copy the token at once**, or you'll never get the chance to see it again. If you do lose the chance, delete the token and generate a new one
 2. Different from the PicGo+Github tutorial, we use **PicGo 2.3.0** version, as it was the latest formal version when we build the page
 
-## STEP 3 (IMPORTANT): Change the Source
+# STEP 3 (IMPORTANT): Change the Source
 
 You may wonder why the pages you built with docsify did not show up as expected when you visit your site link, like this:
 
@@ -41,10 +39,10 @@ Here's what to do:
 3. Now change from "/(root)" to **"/docs"**, and **save** the change
 4. Wait several minutes and visit your link, if it remains the README.md page, just wait for another several minutes or check your web connection.
 
-## STEP 4: Add Some Contents
+# STEP 4: Add Some Contents
 
 Do as you like ^^
 
-## STEP 5: Beautify
+# STEP 5: Beautify
 
 Add a style.css file and include it in the index.html file (if you know basic knwledge about css & html)

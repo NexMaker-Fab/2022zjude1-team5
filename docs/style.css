@@ -12,3 +12,50 @@ body {
 .sidebar > h1 {
   font-weight: 700;
 }
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 48px;
+  row-gap: 60px;
+}
+
+.memberAvatar {
+  max-width: 300px;
+}
+
+#czy,
+#wxn,
+#dx,
+#qyg,
+#wmy,
+#wzh {
+  height: 300px;
+  width: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#czy {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/czy_avatar.jpg");
+}
+
+#wxn {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/wxn_avatar.jpg");
+}
+
+#dx {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/dx_avatar.jpg");
+}
+
+#qyg {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
+}
+#wmy {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
+}
+#wzh {
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
+}
