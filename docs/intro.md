@@ -1,5 +1,7 @@
 # About
 
+**Hello from team 5, the Red Gang Tailor's!**
+
 # Members
 
 <div class="members">

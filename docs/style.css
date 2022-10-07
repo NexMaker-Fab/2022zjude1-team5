@@ -13,16 +13,20 @@ body {
   font-weight: 700;
 }
 
+.illustration {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 32px;
+}
+
 .members {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   column-gap: 48px;
   row-gap: 60px;
-}
-
-.memberAvatar {
-  max-width: 300px;
 }
 
 #czy,
@@ -51,11 +55,13 @@ body {
 }
 
 #qyg {
-  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/qyg_avatar.jpg");
 }
+
 #wmy {
-  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
+  background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/wmy_avatar.jpg");
 }
+
 #wzh {
   background-image: url("https://raw.githubusercontent.com/Juniper1106/docsify/main/img/budapest.png");
 }
