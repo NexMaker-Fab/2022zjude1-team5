@@ -41,8 +41,3 @@
     <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals4.jpg"></img>
     <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals3.jpg"></img>
 </div>
-<!-- 
-![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals1.jpg)
-![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals2.jpg)
-![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals3.jpg)
-![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/rivals4.jpg) -->

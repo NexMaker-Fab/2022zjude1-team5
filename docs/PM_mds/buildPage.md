@@ -46,3 +46,15 @@ Do as you like ^^
 # STEP 5: Beautify
 
 Add a style.css file and include it in the index.html file (if you know basic knwledge about css & html)
+
+## Tips
+
+1. In case you want to align your picture center:
+   change from Markdown language `![](https://yourpic.link)`
+   to html (as below)
+
+```html
+<div align=center>
+   <img src="https://yourpic.link"></img>
+</div>
+```

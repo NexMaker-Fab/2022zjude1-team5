@@ -1,8 +1,16 @@
 body {
-  /* background-image: url(img/bg.png); */
+  /* background: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  ); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .sidebar {
@@ -11,6 +19,10 @@ body {
 
 .sidebar > h1 {
   font-weight: 700;
+}
+
+.sidebar-toggle {
+  background-color: transparent;
 }
 
 .illustration {
@@ -35,8 +47,8 @@ body {
 #qyg,
 #wmy,
 #wzh {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
