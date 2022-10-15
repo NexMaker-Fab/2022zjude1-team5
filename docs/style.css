@@ -33,7 +33,7 @@ body {
   row-gap: 32px;
 }
 
-.members {
+.three-in-a-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -41,6 +41,13 @@ body {
   row-gap: 60px;
 }
 
+.pic-with-caption {
+  grid-template-rows: auto 100px;
+  row-gap: 0px;
+  row-gap: 20px;
+}
+
+/* member info */
 #czy,
 #wxn,
 #dx,

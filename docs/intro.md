@@ -4,7 +4,7 @@
 
 # Members
 
-<div class="members">
+<div class="three-in-a-row">
     <div class="memberCard">
         <div id="czy"></div>
         <p>程卓艺</p>

@@ -11,7 +11,7 @@
 - Final project
   - [topic](./finalProjects_mds/topic.md)
   - [User & Competitive products Research](./finalProjects_mds/research.md)
-  - innovation
+  - [innovation](./finalProjects_mds/innovation.md)
   - market
   - how to design
   - how to make
