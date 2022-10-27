@@ -43,6 +43,70 @@ Here's what to do:
 
 Do as you like ^^
 
+## Make Sidebar Collapsible
+
+We need a plugin to realize this function, [here](https://www.npmjs.com/package/docsify-sidebar-collapse) is what we use. Make sure npm is installed and functions normally on your computer.
+
+### Steps
+
+1. use VSCode to open your file locally.
+2. Open the terminal within VSCode, on Windows, you can use the shortcut "Ctrl + `(the key under esc)", or you can find the entry on the topbar.
+
+<div align=center>
+   <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/where%20is%20terminal.jpg"></img>
+</div>
+
+3. Paste `npm i docsify-sidebar-collapse` in the terminal, press Enter to run the command.
+
+![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/run-collapsible-npm.png)
+
+4. After succesfully installing the plugin, we should include it in the html file (index.html).
+5. in Body section, we added some scripts before, below is our original code (if you haven't made any modification):
+
+```html
+<script>
+  window.$docsify = {
+    name: "Your Name",
+    repo: "",
+    loadSidebar: true, //prepare for sidebar
+    loadNavbar: true, //prepare for navbar
+  };
+</script>
+
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+```
+
+We made changes here, and below is the final code.  
+p.s.: We deleted the `subMaxLevel: 3` attributes in the original tutorial^ ^
+
+```html
+<script>
+  window.$docsify = {
+    name: "Your Name",
+    repo: "",
+    loadSidebar: true, //prepare for sidebar
+    loadNavbar: true, //prepare for navbar
+    alias: {
+      "/.*/_sidebar.md": "/_sidebar.md",
+    },
+    sidebarDisplayLevel: 1,
+  };
+</script>
+
+<!-- Docsify v4 -->
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+<!-- plugins -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+```
+
+6. Now we can click to collape sub items in sidebar! To make its collapsible feature more straightfoward, we can add some style. The original tutorial offered 2 types of style (arrow and folder), we can include the stylesheet you like in the head section of the html file.
+<div align=center>
+   <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/without%20arrow.gif"></img>
+   <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/with%20arrow.gif"></img>
+</div>
+
 # STEP 5: Beautify
 
 Add a style.css file and include it in the index.html file (if you know basic knwledge about css & html)
@@ -58,3 +122,8 @@ Add a style.css file and include it in the index.html file (if you know basic kn
    <img src="https://yourpic.link"></img>
 </div>
 ```
+
+2. Open the Project in VSCode
+   On windows, you can directly drag and drop the local file to VSCode icon to quickly open the file.
+
+![](<https://raw.githubusercontent.com/Juniper1106/docsify/main/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(214).png>)
