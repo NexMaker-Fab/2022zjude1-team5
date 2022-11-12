@@ -113,9 +113,10 @@ Add a style.css file and include it in the index.html file (if you know basic kn
 
 ## Tips
 
-1. In case you want to align your picture center:
-   change from Markdown language `![](https://yourpic.link)`
-   to html (as below)
+### In case you want to align your picture center:
+
+change from Markdown language `![](https://yourpic.link)`
+to html (as below)
 
 ```html
 <div align=center>
@@ -123,7 +124,68 @@ Add a style.css file and include it in the index.html file (if you know basic kn
 </div>
 ```
 
-2. Open the Project in VSCode
-   On windows, you can directly drag and drop the local file to VSCode icon to quickly open the file.
+### Open the Project in VSCode
+
+On windows, you can directly drag and drop the local file to VSCode icon to quickly open the file.
 
 ![](<https://raw.githubusercontent.com/Juniper1106/docsify/main/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(214).png>)
+
+### Syntax Highlighting Problem
+
+Are facing with such problem as below, that Arduino and Processing code are **not highlighted** as the html code (note that we use C to replace Arduino C, and Java to replace Processing):
+
+Without highlighting:
+
+![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/syntax-no-highlight-processing.png)
+
+With highlighting:
+
+![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/syntax-with-highlight-html.jpg)
+
+If your answer is yes, please follow this tutorial
+
+#### Background Information
+
+Docsify uses [Prism](https://prismjs.com/) to highlight code blocks in your pages. Prism supports the following languages by default (refer to the [official documentation](https://docsify.js.org/#/language-highlight)).  
+It's still unknown to us that although C-like (c, cpp etc.) languages are included in the default set, C language can not be highlighted. But never mind, we'll make it ourselves.
+
+#### Step 1: Add the Right Script
+
+Docsify can not highlight certain language if the corresponding script is missing, so we need to add it to index.html file manually:
+
+```html
+<!--refer to https://docsify.js.org/#/language-highlight-->
+
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+```
+
+Note that:
+
+1. In the above link, the `@1` refers to file version, you can change it to `@1.x` as you like (Don't forget to click and jump to the link to check that if the version you want to change do exist). We are using version 1.9.
+2. `prism-bash` or `prism-php` refers to the language you want to add. Arduino C is C-like language and Processing uses Java, so what we need is `prism-c` and `prism-java`
+
+##### Special Notice
+
+1. You must add the scripts **after** the docsify.js script. If you add them before (for example, in the `<head>` section), it won't function (for original info, click [here](https://stackoverflow.com/questions/63516429/i-cannot-get-a-colored-code-with-docsify)).  
+   Our code:
+
+   ```html
+   <!-- Docsify v4 -->
+   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+   <script src="//cdn.jsdelivr.net/npm/prismjs@1.9/components/prism-c.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/prismjs@1.9/components/prism-java.min.js"></script>
+   ```
+
+2. While using \`\`\` to define a code block, you should always use lower case to write the language name, i.e. `c` instead of `C`, and `java` instead of `Java`
+
+#### Step 2: Add style
+
+Now you can see your Processing and Arduino code are highlighted, but do not improve much compared to the non-highlighted version.
+![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/processing-ugly-highlight.jpg)
+
+Here, we can use some [preset css file](https://github.com/PrismJS/prism-themes) to beutify its appearance. You can directly dowmload or copy-and paste the css code from the [theme file](https://github.com/PrismJS/prism-themes/tree/master/themes) into your own file, and include the css file in index.html.  
+Here, I recommend `prism-coy-without-shadows` `prism-ghcolors` `prism-one-light` `prism-vs`, which is relatively beautiful and clear on windows, light mode.
+
+You can browse where code is implemented in the site to see the final effect :)

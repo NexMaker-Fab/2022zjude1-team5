@@ -16,7 +16,7 @@
 
 ### 眼睛
 
-```Java
+```java
   noStroke();
   fill(255);
   ellipse(238, 300, 120, height);
@@ -32,7 +32,7 @@
 
 ### 火花
 
-```Java
+```java
   stroke(b);
   line(mouseX-8, mouseY, mouseX-16, mouseY);
   line(mouseX+8, mouseY, mouseX+16, mouseY);
@@ -51,7 +51,7 @@
 
 屏幕大小 600\*600，眼白大小 120\*120，为将瞳孔大部分框在眼白内，在鼠标运动横跨屏幕的时候，瞳孔跨越大半个眼白，且原点在眼白中心，因此代码为：
 
-```Java
+```java
   fill(0);
   ellipse(mouseX/6+188, mouseY/6+250, 60, 60);
   fill(0);
@@ -64,14 +64,14 @@
 
 - 在最开始设置 ellipse 高度为 120
 
-```Java
+```java
 //height是眼睛的高度
 float height = 120;
 ```
 
 - 在键盘按下的时候，将高度改为 0.3，因为改成 0 就直接消失了，没有眨眼的感觉
 
-```Java
+```java
   if (keyPressed) {
     height = 0.3;
   }
@@ -79,7 +79,7 @@ float height = 120;
 
 - 在眨眼 1000 毫秒后，自动睁开，高度变回 120
 
-```Java
+```java
 if (millis()>1000) {
     height = 120;
   }
@@ -91,13 +91,13 @@ if (millis()>1000) {
 
 - 首先定义火花为黑色，隐藏在背景中看不到
 
-```Java
+```java
 int b = 0;
 ```
 
 - 在鼠标点击后，描边变色，可以被看到
 
-```Java
+```java
   if (mousePressed) {
     b = 200;
   }
@@ -105,7 +105,7 @@ int b = 0;
 
 - 在 1000 毫秒后火花自动消失（变为黑色）
 
-```Java
+```java
   if (millis()>1000) {
     height = 120;
     b = 0;
@@ -116,7 +116,7 @@ int b = 0;
 
 ### 完整代码
 
-```Java
+```java
 //height是眼睛的高度
 float height = 120;
 
