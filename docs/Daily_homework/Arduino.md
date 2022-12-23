@@ -1,3 +1,105 @@
+# DIY 作业：Hello World with Time
+
+演示了 16x2 的 LCD 显示屏的使用。将 "Hello World!"打印到 LCD 上并显示时间。
+
+LiquidCrystal Library - Hello World
+
+Demonstrates the use a 16x2 LCD display. The LiquidCrystal library works with all LCD displays that are compatible with the Hitachi HD44780 driver. There are many of them out there, and you can usually tell them by the 16-pin interface.
+
+## 程序代码
+
+This sketch prints "Hello World!" to the LCD and shows the time.
+
+```c
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, world!");
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 1000);
+}
+```
+
+## 实际操作
+
+![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/hello_lcd.jpg)
+
+# 课堂练习 1：超声波传感器+1602 显示屏
+
+## 程序代码
+
+```c
+// include the library code:
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+#define TrigPin A4
+// __|^|_____________
+// 10us or more HITH SIGNAL will drive it work for one time
+
+#define EchoPin A5
+// initialize the library with the numbers of the interface pins
+int count = 0;
+
+long duration;
+// PULSE WIDTH
+
+void setup() {
+    // set Serial communication
+    Serial.begin(115200);
+    // set pin mode
+    pinMode(TrigPin, OUTPUT);
+    pinMode(EchoPin, INPUT);
+    // init pin
+    digitalWrite(TrigPin, LOW);
+    delay(1);
+
+// set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+}
+
+
+
+long getDistance() {
+    // trig
+    digitalWrite(TrigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(TrigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TrigPin, LOW);
+    // echo
+    duration = pulseIn(EchoPin, HIGH);     // unit: us
+    return duration * 0.34029 / 2;         // unit: mm
+}
+
+
+void loop() {
+      // Print a message to the LCD.
+//  lcd.print(count++);
+//  lcd.setCursor(0, 1);
+  lcd.print(getDistance());
+  delay(2000);
+  lcd.clear();
+
+}
+```
+
+## 实际操作
+
+![](../img/ultrosonar.gif)
+
 # 课堂练习 1：Button 按钮
 
 Pushbuttons or switches connect two points in a circuit when you press them. This example turns on the built-in LED on pin 13 when you press the button.
@@ -116,289 +218,4 @@ void loop() {
 
 <div align=center>
    <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/hardware-photo.png" width=500px></img>
-</div>
-
-# 课后作业：Hello World
-
-演示了 16x2 的 LCD 显示屏的使用。将 "Hello World!"打印到 LCD 上并显示时间。
-
-LiquidCrystal Library - Hello World
-
-Demonstrates the use a 16x2 LCD display. The LiquidCrystal library works with all LCD displays that are compatible with the Hitachi HD44780 driver. There are many of them out there, and you can usually tell them by the 16-pin interface.
-
-## 程序代码
-
-This sketch prints "Hello World!" to the LCD and shows the time.
-
-```c
-// include the library code:
-#include <LiquidCrystal.h>
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-
-void setup() {
-  // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
-  lcd.print("hello, world!");
-}
-
-void loop() {
-  // set the cursor to column 0, line 1
-  // (note: line 1 is the second row, since counting begins with 0):
-  lcd.setCursor(0, 1);
-  // print the number of seconds since reset:
-  lcd.print(millis() / 1000);
-}
-```
-
-## 实际操作
-
-![](https://raw.githubusercontent.com/Juniper1106/docsify/main/img/hello_lcd.jpg)
-
-# 课堂练习 1：超声波传感器+1602 显示屏
-
-## 程序代码
-
-```c
-// include the library code:
-#include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-#define TrigPin A4
-// __|^|_____________
-// 10us or more HITH SIGNAL will drive it work for one time
-
-#define EchoPin A5
-// initialize the library with the numbers of the interface pins
-int count = 0;
-
-long duration;
-// PULSE WIDTH
-
-void setup() {
-    // set Serial communication
-    Serial.begin(115200);
-    // set pin mode
-    pinMode(TrigPin, OUTPUT);
-    pinMode(EchoPin, INPUT);
-    // init pin
-    digitalWrite(TrigPin, LOW);
-    delay(1);
-
-// set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-}
-
-
-
-long getDistance() {
-    // trig
-    digitalWrite(TrigPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(TrigPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(TrigPin, LOW);
-    // echo
-    duration = pulseIn(EchoPin, HIGH);     // unit: us
-    return duration * 0.34029 / 2;         // unit: mm
-}
-
-
-void loop() {
-      // Print a message to the LCD.
-//  lcd.print(count++);
-//  lcd.setCursor(0, 1);
-  lcd.print(getDistance());
-  delay(2000);
-  lcd.clear();
-
-}
-```
-
-## 实际操作
-
-![](../img/ultrosonar.gif)
-
-# Processing communication with Arduino
-
-四个按钮分别代表上下左右，控制 process 中的点的位置。
-
-## 程序代码
-
-### Arduino coding
-
-```c
-int upPin = 3;
-int downPin = 4;
-int leftPin = 5;
-int rightPin = 6;
-int up1,down1,left1,right1;
-
-void setup() {
-  pinMode(upPin,INPUT_PULLUP);
-  pinMode(downPin,INPUT_PULLUP);
-  pinMode(leftPin,INPUT_PULLUP);
-  pinMode(rightPin,INPUT_PULLUP);
-  Serial.begin(9600);
-}
-
-void loop() {
-
-  up1 = digitalRead(upPin);
-  down1 = digitalRead(downPin);
-  left1 = digitalRead(leftPin);
-  right1 = digitalRead(rightPin);
-  if(up1 == 0)
-  {
-    delay(500);
-    Serial.write("a");
-  }
-  else if(down1 == 0)
-  {
-    delay(500);
-    Serial.write("b");
-  }
-  else if(left1 == 0)
-  {
-    delay(500);
-    Serial.write("c");
-  }
-  else if(right1 == 0)
-  {
-    delay(500);
-    Serial.write("d");
-  }
-}
-```
-
-### Processing coding
-
-```java
-import processing.serial.*;
-Serial port;
-int a = 300;
-int b = 300;
-
-void setup(){
-  size(600,600);
-  background(200,200,200);
-  fill(255,0,0);
-  ellipse(a,b,30,30);
-  port = new Serial(this,"COM4",9600);
-}
-
-void draw()
-{
-  while(port.available()>0)
-  {
-    char input = port.readChar(); //read information from Arduino
-    switch(input)
-    {
-      case'a':
-      background(200,200,200);
-      fill(255,0,0);
-      b -= 20;
-      ellipse(a,b,30,30);
-      break;
-
-      case'b':
-      background(200,200,200);
-      fill(255,0,0);
-      b += 20;
-      ellipse(a,b,30,30);
-      break;
-
-      case'c':
-      background(200,200,200);
-      fill(255,0,0);
-      a -= 20;
-      ellipse(a,b,30,30);
-      break;
-
-      case'd':
-      background(200,200,200);
-      fill(255,0,0);
-      a += 20;
-      ellipse(a,b,30,30);
-      break;
-      default:break;
-    }
-  }
-}
-```
-
-## 接线模拟
-
-## 实际操作
-
-<div align=center>
-   <img src="../img/Pr+Ard_gif.gif" width=400px></img>
-</div>
-
-## 魔改版
-
-- 修改颜色和背景
-- 圆点显示走动轨迹
-
-### Processing coding
-
-```java
-import processing.serial.*;
-Serial port;
-int a = 300;
-int b = 300;
-
-void setup(){
-  size(600,600);
-  background(255,200,200);
-  stroke(255,255,255);
-  fill(255,200,200);
-  ellipse(a,b,30,30);
-  port = new Serial(this,"COM4",9600);
-}
-
-void draw()
-{
-  while(port.available()>0)
-  {
-    char input = port.readChar(); //read information from Arduino
-    switch(input)
-    {
-      case'a':
-      noStroke();
-      fill(255,255,255);
-      b -= 50;
-      ellipse(a,b,30,30);
-      break;
-
-      case'b':
-      noStroke();
-      fill(255,255,255);
-      b += 50;
-      ellipse(a,b,30,30);
-      break;
-
-      case'c':
-      noStroke();
-      fill(255,255,255);
-      a -= 50;
-      ellipse(a,b,30,30);
-      break;
-
-      case'd':
-      fill(255,255,255);
-      a += 50;
-      ellipse(a,b,30,30);
-      break;
-      default:break;
-    }
-  }
-}
-```
-
-### 实际操作
-
-<div align=center>
-   <img src="https://raw.githubusercontent.com/Juniper1106/docsify/main/img/Pr%2BArd_gif_modified.gif" width=400px></img>
 </div>

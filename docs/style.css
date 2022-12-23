@@ -13,6 +13,16 @@ body {
   background-attachment: fixed;
 }
 
+.markdown-section > * {
+  font-size: 1.05rem;
+}
+
+.markdown-section ol,
+.markdown-section p,
+.markdown-section ul {
+  line-height: 1.8rem;
+}
+
 .sidebar {
   background-color: transparent;
 }

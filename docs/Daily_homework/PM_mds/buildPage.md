@@ -111,6 +111,16 @@ p.s.: We deleted the `subMaxLevel: 3` attributes in the original tutorial^ ^
 
 Add a style.css file and include it in the index.html file (if you know basic knwledge about css & html)
 
+## Introduction to CSS
+
+CSS stands for Cascading Style Sheets. Cascading Style Sheets (CSS) is used to format the layout of a webpage.
+
+CSS saves a lot of work. It can control the layout of multiple web pages all at once. With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
+
+For more information, please refer to [CSS in HTML](https://www.w3schools.com/html/html_css.asp) or [CSS Tutorial](https://www.w3schools.com/css/default.asp)
+
+As for Chinese tutorial, please refer to [runoob.com](https://www.runoob.com/css/css-tutorial.html)
+
 ## Tips
 
 ### In case you want to align your picture center:
@@ -189,3 +199,5 @@ Here, we can use some [preset css file](https://github.com/PrismJS/prism-themes)
 Here, I recommend `prism-coy-without-shadows` `prism-ghcolors` `prism-one-light` `prism-vs`, which is relatively beautiful and clear on windows, light mode.
 
 You can browse where code is implemented in the site to see the final effect :)
+
+# STEP 6: Github Repository & Web Page Management
